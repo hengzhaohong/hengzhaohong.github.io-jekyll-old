@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://yourdomain.com/jekyll/update/welcome-to-jekyll</loc>
+<lastmod>2016-02-21T17:15:49+08:00</lastmod>
+</url>
+<url>
+<loc>http://yourdomain.com/about/</loc>
+</url>
+<url>
+<loc>http://yourdomain.com/tag/jekyll/</loc>
+</url>
+<url>
+<loc>http://yourdomain.com/tag/ruby/</loc>
+</url>
+<url>
+<loc>http://yourdomain.com/category/jekyll/</loc>
+</url>
+<url>
+<loc>http://yourdomain.com/category/update/</loc>
+</url>
+<url>
+<loc>http://yourdomain.com/collection/posts/</loc>
+</url>
+</urlset>
