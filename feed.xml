@@ -1,44 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Honghzh</title>
+    <description>可能包含了日常知识小记和一些前端、Python、各种Tools的个人实践(爬坑)指南。有可能是超认真教程，也有可能是有点杂乱的随笔，写作十分随心
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Mar 2018 01:05:34 +0800</pubDate>
-    <lastBuildDate>Sun, 25 Mar 2018 01:05:34 +0800</lastBuildDate>
+    <link>https://honghzh.github.io/</link>
+    <atom:link href="https://honghzh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 28 Mar 2018 00:16:43 +0800</pubDate>
+    <lastBuildDate>Wed, 28 Mar 2018 00:16:43 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>指南 | Windows下使用 GitHub Pages 搭建个人博客</title>
+        <description>&lt;p&gt;这两天偶然看到了一篇基于 GitHub Pages 的博文，之前对 GitHub Pages 早有耳闻，遂怀着兴趣研究了一下。这篇指南使用的是探索的视角，一步步呈现从无到有的详细过程，包括研究官方指引、带逛英文文档、分析步骤原理等。&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;根据&lt;a href=&quot;https://pages.github.com/&quot;&gt; GitHub Pages 官网&lt;/a&gt;的介绍，&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Websites for you and your projects.
+Just edit, push, and your changes are live.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;使用 GitHub Pages 可以在短时间内搭建出精美、个性的博客网站。只需要专注于编辑文章内容，放入预先提供好的模板，再提交给 GitHub Pages，就可以看到自己发布的网站了。&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;精致，简单，免费，这真是太棒了，现在就开始吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;在-github-上启用-github-pages&quot;&gt;在 GitHub 上启用 GitHub Pages&lt;/h2&gt;
+
+&lt;p&gt;本节主要将引导阅读&lt;a href=&quot;https://pages.github.com/&quot;&gt; GitHub Pages 官网&lt;/a&gt;下方的快速指南。本节结束时，在浏览器输入网址就能看到属于自己的、新生的基础网站了。&lt;/p&gt;
+
+&lt;p&gt;官方指引的第一步：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;眼下，如果你不了解Git、GitHub或repository（翻译为”库”），那么你需要阅读下面的基础准备。&lt;/p&gt;
+
+&lt;h3 id=&quot;基础准备安装git拥有一个github-账号&quot;&gt;基础准备：安装Git，拥有一个GitHub 账号&lt;/h3&gt;
+
+&lt;p&gt;理解了原理，才能更好地学习，如果你暂时对 Git 一无所知，或者想先对 GitHub Pages 的原理有大致直观的把握？我写了一篇短文，它就是为此而生的，这篇短文将很有助于你对接下来步骤的理解：&lt;a href=&quot;/abc/github-pages/git-and-github-pages-abc&quot;&gt;入门 | Git 、GitHub 与 GitHub Pages 原理的生动介绍&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;首先，从&lt;a href=&quot;https://git-scm.com/&quot;&gt; Git 官网&lt;/a&gt;上下载 Git 并安装，安装完成后，右键菜单会多出 Git Bash Here 这一项即可，后面将用到。&lt;/p&gt;
+
+&lt;p&gt;如果还没有 GitHub账号，先在&lt;a href=&quot;https://github.com/&quot;&gt; GitHub &lt;/a&gt;上注册一个，只需不到 2 分钟。&lt;/p&gt;
+
+&lt;p&gt;接着，如果是刚注册 GitHub 账号，还需要关联本地 Git 客户端：在 Settings-SSH and GPG keys 中关联自己本地 Git 用户的 SSH Key，具体步骤可参考&lt;a href=&quot;https://help.github.com/articles/connecting-to-github-with-ssh/&quot;&gt;GitHub帮助文档&lt;/a&gt;后四篇。&lt;/p&gt;
+
+&lt;p&gt;基础准备完成后，你就可以正常使用 Git 和 GitHub ，下一步从官方指引出发，开始愉快的 GitHub Pages 探索之旅吧。&lt;/p&gt;
+
+&lt;h3 id=&quot;新建一个远程库&quot;&gt;新建一个远程库&lt;/h3&gt;
+
+&lt;p&gt;首先，登录 GitHub ，在导航条加号菜单中点击 New repository 进入新建远程库的界面（库的概念见上文的简单介绍）。&lt;/p&gt;
+
+&lt;p&gt;页面要求填写库的基本信息，在 Repository name (就是库名，也就是受到 Git 版本控制的文件夹名)中输入 &lt;em&gt;自己的 GitHub用户名.github.io&lt;/em&gt;，比如若 GitHub 账号名是&lt;em&gt;username&lt;/em&gt;，那么库名就应设置成 &lt;em&gt;username.github.io&lt;/em&gt;，这个命名方式是 GitHub Pages 规定好的，这个库名其实也是我们个人网站的地址。&lt;/p&gt;
+
+&lt;p&gt;其他选项可默认，填写完毕后点击 Create Repository 即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;将远程库克隆到本地&quot;&gt;将远程库克隆到本地&lt;/h3&gt;
+
+&lt;p&gt;新建远程库之后，进入刚才的库中，将库 Clone 到本地自己的一个文件夹中。&lt;/p&gt;
+
+&lt;p&gt;具体步骤可以是：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;点击导航条上的头像菜单-点击 Your profile，打开的页面中点击 Overview 旁边的 Repositories 选项卡，选择刚建的库。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在库的文件列表的上方，右侧有一个绿色按钮 Clone or download，点开，复制中部的 SSH key，比如 &lt;em&gt;git@github.com:honghzh/demo2.git&lt;/em&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在本地新建一个文件夹用来存放个人网站，比如命名为 My_Page，进入 My_Page，右键菜单– Git Bash Here，在打开的 Git 终端上输入并回车执行&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; git clone https://github.com/username/username.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;其中，&lt;em&gt;git clone&lt;/em&gt; 后面的地址是自己在第2步复制的 SSH Key，不同用户的 &lt;em&gt;username&lt;/em&gt; 部分是不同的。&lt;/p&gt;
+
+    &lt;p&gt;这个命令意思是将远程库地址是 &lt;em&gt;git@github.com:username/username.github.io.git&lt;/em&gt; 的远程仓库同步到本地。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;写一个基础网页推到远程库中&quot;&gt;写一个基础网页，推到远程库中&lt;/h3&gt;
+
+&lt;p&gt;最后，在 Git 终端中依次输入并执行以下五条命令即可：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd username.github.io
+echo &quot;Hello World&quot; &amp;gt; index.html
+git add .
+git commit -m &quot;Initial commit&quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;对此的解释：&lt;/p&gt;
+
+&lt;p&gt;第一行 cd username.github.io 意思是进入名为username.github.io的文件夹。&lt;/p&gt;
+
+&lt;p&gt;第二行 echo “Hello World” &amp;gt; index.html 是在文件夹中新建一个名为 index.html 的 HTML 文件并在其中写入  Hello World ，此处只是示例，我们等下真正写博客内容的时候并不用这种方式写入。&lt;/p&gt;
+
+&lt;p&gt;第三行开始使用 Git 的版本控制功能，第三行 git add . 意思就是将username.github.io文件夹里的所有变动记录到暂存区（注意命令最后有一个点）。&lt;/p&gt;
+
+&lt;p&gt;第四行 git commit -m “Initial commit” 意思是将之前暂存的变动作为一个新的版本提交给 Git ，这个版本的描述信息是“Initial commit”。&lt;/p&gt;
+
+&lt;p&gt;第五行 git push origin master 意思是将最新的本地版本同步到代号为 origin 的远程库中（在&lt;code class=&quot;highlighter-rouge&quot;&gt;git clone&lt;/code&gt;的时候，Git 已经自动将这个本地库的关联的 origin 定义成你 clone 时复制的目标远程库， master 是默认分支名，分支相当于一条独立的版本变动记录，一个库可以有多个分支），执行完毕后刷新GitHub的远程库，会发现其中的文件被改变了，即远程的版本被你更新了。&lt;/p&gt;
+
+&lt;h3 id=&quot;新网页诞生&quot;&gt;新网页诞生&lt;/h3&gt;
+
+&lt;p&gt;至此，本节完成，现在在地址栏中输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;https://你的用户名.github.io&quot;&lt;/code&gt;，就可以看到刚刚创建的个人网页了，虽然只有最基本的 Hello World 字样，但下一节引入官方预设的主题模板后，界面将十分美观。&lt;/p&gt;
+
+&lt;h2 id=&quot;引入网站模板&quot;&gt;引入网站模板&lt;/h2&gt;
+
+&lt;p&gt;本节讲述如何在 GitHub Pages 上套用官方或社区提供的精美模板，完成后，网站将变得精致美观、五脏俱全。&lt;/p&gt;
+
+&lt;h3 id=&quot;从-github-pages-到-jekyll&quot;&gt;从 GitHub Pages 到 Jekyll&lt;/h3&gt;
+
+&lt;p&gt;在 &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages 官网&lt;/a&gt;在快速指引的结尾写着这样一段话：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Bloging with Jekyll&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;Using Jekyll, you can blog using beautiful Markdown syntax, and without having to deal with any databases. &lt;a href=&quot;https://jekyllrb.com/docs/quickstart/&quot;&gt;&lt;strong&gt;Learn how to set up Jekyll&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;原来，使用一个叫 Jekyll 的工具，就可以省去自己搭建网站的麻烦，只需要专注于编辑内容，这正是我们想要的。&lt;/p&gt;
+
+&lt;p&gt;点开它附上的链接：&lt;a href=&quot;https://jekyllrb.com/docs/quickstart/&quot;&gt;&lt;strong&gt;Learn how to set up Jekyll&lt;/strong&gt;&lt;/a&gt;，我们进入了 Jekyll 官方的 Quick-start 指引。这个指引开头列出了一大堆基本命令，比如：&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Create a new Jekyll site at ./myblog&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myblog&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意到第一行的注释，发现这个指引是教我们如何从一个空荡荡的网站开始，从零构建出我们的网站的。&lt;/p&gt;
+
+&lt;p&gt;那么，&lt;strong&gt;有没有人已经按这个指引构建出一个结构完整的网站，顺带设计好样式，然后发布到网上供我们直接套用呢？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;有！他们把模板放在他们 GitHub 的仓库上，甚至还写了详细的说明文档，教你怎么使用他们的模板。许多设计精美的模板被 Jekyll 官方收录在&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;这里&lt;/a&gt;，直接套用它们（或在其基础上自己改写）是最快最有效率的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;套用-jekyll-主题模板&quot;&gt;套用 Jekyll 主题模板&lt;/h3&gt;
+
+&lt;p&gt;现在，访问官方收录的模板 &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;，选择一个你觉得好看的模板，这里选择 Prologue 主题为例：&lt;a href=&quot;http://jekyllthemes.org/themes/jekyll-theme-prologue/&quot;&gt;Prologue&lt;/a&gt;，点击按钮“Download”下载它的zip文件。&lt;/p&gt;
+
+&lt;p&gt;解压后是一个名为“jekyll-theme-prologue-master”的文件夹，进入该文件夹，把内部所有的文件复制进你之前从自己 GitHub 上克隆下来的那个文件夹(就是和你的网站的远程仓库关联的本地仓库)。若提示冲突，则选择替换。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;不确定哪个是本地的网站文件夹（仓库）？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;因为从 GitHub 上 clone 下来的仓库，会自动和 GitHub 的远程仓库&lt;strong&gt;同名&lt;/strong&gt;，所以你本地的网站文件夹（仓库）的名称应该是“你的用户名.github.io”，注意不要删掉里面的“.git”文件夹。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一个 Git 仓库最明显的特征是：仓库里会有一个名为“.git”的隐藏文件，那是 Git 用来做版本记录的“小本子”。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;同步到-github&quot;&gt;同步到 GitHub&lt;/h3&gt;
+
+&lt;p&gt;GitHub Pages 实质上是用它自己的服务器，将你放在 GitHub 上的某个远程仓库（repository）渲染成你的个人网站。我们刚才已经将模板放进了自己的本地仓库中，那么剩下要做的就是把它推送到自己 GitHub 的远程仓库上，我们的个人网站就会自动更新。&lt;/p&gt;
+
+&lt;p&gt;在网站仓库根目录下右键-&amp;gt; Git Bash Here 打开 Git 终端，依次输入并执行以下三条命令：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .
+git commit -m &quot;引入网站模板&quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;解释：这三条命令让 Git 终端把当前仓库的状态记录为一个新的版本（前两行），并且同步到 GitHub 对应的远程仓库中（第三行）。详细同第一步中的解释。&lt;/p&gt;
+
+&lt;h3 id=&quot;精致美观的网站&quot;&gt;精致美观的网站&lt;/h3&gt;
+
+&lt;p&gt;现在，GitHub 上的远程仓库已经改变，访问我们的个人网址 &lt;em&gt;https://你的用户名.github.io&lt;/em&gt; 就可以看到更新后的个人网站了。虽然其中的文字内容还只是模板的示例内容，但这已是从无到有，再到美观的一大进步了~&lt;/p&gt;
+
+&lt;h2 id=&quot;发表第一篇文章&quot;&gt;发表第一篇文章&lt;/h2&gt;
+
+&lt;p&gt;本节将指引阅读刚才下载的主题模板自带的文档，从而可以修改文字内容，真正完成一个自己的网站。&lt;/p&gt;
+
+&lt;p&gt;首先，我们回到刚才在 &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt; 中挑选的主题，比如 Prologue ，看到&lt;a href=&quot;http://jekyllthemes.org/themes/jekyll-theme-prologue/&quot;&gt;Prologue&lt;/a&gt;页面下方的 Getting Started :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Information and special instructions on GitHub.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;好的，详细的编辑指南在他们的 GitHub 里，我们点击页面上方的 Homepage 进入 &lt;a href=&quot;https://github.com/chrisbobbe/jekyll-theme-prologue&quot;&gt;Prologue主题的 GitHub&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;在这个远程仓库里向下滚动，就看到了说明文档：&lt;/p&gt;
+
+&lt;p&gt;（所有主题的功能架构都是统一的，因此其他的主题即使没有这份文档，配置方法也和这篇几乎相同）&lt;/p&gt;
+
+&lt;h3 id=&quot;prologue---jekyll-theme-文档&quot;&gt;Prologue - Jekyll Theme 文档&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;开头是主题的简单介绍。（忽略）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Added Features&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;这个版本增加的新特性有…（忽略）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;引入模板的方法，这里写了两种方法。我们刚刚用的是第二种。（因为刚才已经安装好了，所以这步也忽略）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Build your homepage&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;重点&lt;/strong&gt;：从这里开始介绍怎么把网站修改成自己的。&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;网站的所有基础配置（比如网站名称、结构、作者信息等等）都在 &lt;em&gt;_config.yml&lt;/em&gt; 文件里，这个文件可以用文本编辑器打开（比如 &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt;）修改。
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# _config.yml 摘选，只需修改冒号后的内容，不需要的放空即可
+title: Your awesome title #你的网站名称
+subtitle: Your awesome subtitle #你的网站副名称
+author: Your Incredible Name #博主ID
+email: your-email@example.com # 你的邮箱
+avatar: assets/images/avatar.jpg # Logo地址
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;所有你需要发布的文章，只需放入 &lt;em&gt;_posts&lt;/em&gt; 文件夹里，一般里面都会有几篇示例文章，文章后缀名一般是 .md 或 .markdown ，因而这个文件夹很好识别。&lt;/p&gt;
+
+        &lt;p&gt;在一篇文章的开头可以进行一些标题、标题配图、标签等等的独立配置，下一个标题后会告诉你怎么配置。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Start blogging !&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;这里开始教你怎么新增一篇文章。&lt;/p&gt;
+
+    &lt;p&gt;首先，使用文本编辑器（比如 &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt;）在 _posts 文件夹中新建一个 markdown 文件，比如 newArticle.md 。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;配置文章信息&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;在文章的开头进行基本信息的声明，以三个短横线 --- 开头，三个短横线 --- 结尾，比如：&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+title: 文章的标题
+layout: 这篇文章
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;模板就会自动把这些信息渲染到网站上合适的位置，或实现所需的功能（比如按文章标签分类），具体可以查看已有的示例文章进行理解、模仿。&lt;/p&gt;
+
+        &lt;p&gt;可能有的主题需要你设置文章的发表日期，注意把时间写早一点，比如比现在少8小时，否则由于时区问题，可能最后看不到自己新增的这篇文章。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;使用 markdown 语法写作&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;这里的文章一般使用 markdown 语法写成（比如本文），文件后缀名为 &lt;em&gt;.md&lt;/em&gt; 或 &lt;em&gt;.markdown&lt;/em&gt;。markdown 是一种美观易学的写作方式，已经受到很多主流的笔记类 APP 支持。只需在文本基础上增加少量符号，就可以自动美化排版。如果现在不会的话，不妨在编辑文章时按需求参考&lt;a href=&quot;https://www.appinn.com/markdown/&quot;&gt;Markdown简明语法&lt;/a&gt;，很快就能运用自如。&lt;/p&gt;
+
+        &lt;p&gt;现在就可以使用 markdown 写一篇小短文了，整个 &lt;em&gt;myArticle.md&lt;/em&gt; 文件的内容可以类似这样：&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+title: 文章的标题
+layout: 这篇文章
+---
+
+这是我的第一篇文章。
+
+## 前言
+
+第一段，注意markdown语法要求标题的#号后面跟一个空格，否则那只会被看作普通的#号。
+
+第二段，注意markdown语法要求两段之间隔一整个空行。
+
+## 正文标题一
+
+正文第一段
+
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;写好后保存即可，注意&lt;strong&gt;文件名不应该有中文&lt;/strong&gt;（因为文件名也会被设置成这篇文章的子网址），一般还会要求你把文件命名为 &lt;em&gt;日期-英文简要标题.md&lt;/em&gt; 的格式，比如 &lt;em&gt;2018-03-25-github-pages-guidance01.md&lt;/em&gt; ，和本文的地址栏比较就很好理解了。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Add a page&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;这里教你怎么在网站上新建一个独立页面（比如 &lt;em&gt;About&lt;/em&gt; 页面），这个页面的链接默认将在导航栏上显示。&lt;/p&gt;
+
+    &lt;p&gt;步骤：你只需要在网站文件夹根目录下新建一个 markdown 文件，和刚才写文章一样，写入基本信息和正文内容，保存即可。文件名是这个页面的子网址，文件里设置的 &lt;em&gt;title&lt;/em&gt; 会显示在导航栏上，在文件内配置 &lt;em&gt;hide:true&lt;/em&gt; 可以使该页面不显示在导航栏。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;我们的主要做：&lt;/strong&gt;根据文档，我们重新编辑了 &lt;em&gt;_config.yml&lt;/em&gt; 文件，并在 &lt;em&gt;_post&lt;/em&gt; 文件夹里把原有的示例文章删除，新增了自己的文章。&lt;/p&gt;
+
+&lt;h3 id=&quot;其他文件夹的功能&quot;&gt;其他文件夹的功能&lt;/h3&gt;
+
+&lt;p&gt;因为所有主题的文件结构都是统一的，我们还可以研究一下其他的文件夹的作用。通过浏览&lt;a href=&quot;https://jekyllrb.com/docs/quickstart/&quot;&gt;Jekyll官方文档&lt;/a&gt;可以知道详细，直观地说，&lt;em&gt;_includes&lt;/em&gt; 就是网站的基础组件，包括导航条、网站头部等等，&lt;em&gt;_layout&lt;/em&gt; 就是利用基础文件组成网站各部分页面的高级组件。&lt;em&gt;_assets&lt;/em&gt; 是存放网站样式、动态效果的地方，&lt;em&gt;_section&lt;/em&gt; 管理网站的主页应显示的内容，&lt;em&gt;_site&lt;/em&gt; 是编译好的网页文件夹，&lt;em&gt;_index.html&lt;/em&gt; 就是整个网站的入口文件。&lt;/p&gt;
+
+&lt;p&gt;有的主题可能不全含有上述的文件夹，但是基本功能和文件结构是大同小异的。&lt;/p&gt;
+
+&lt;h3 id=&quot;发布新增的文章&quot;&gt;发布新增的文章&lt;/h3&gt;
+
+&lt;p&gt;现在可以向 GitHub 发布新增的文章和改好的信息了，同样上文一样，网站文件夹根目录下，右键-&amp;gt;Git Bash Here，依次执行下面三行命令：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .
+git commit -m &quot;新增文章，修改配置&quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;刚才在本地仓库作的改动就被同步到了 GitHub 的对应远程仓库上。&lt;/p&gt;
+
+&lt;h3 id=&quot;完整的个人网站&quot;&gt;完整的个人网站&lt;/h3&gt;
+
+&lt;p&gt;现在输入网址 &lt;em&gt;https://你的用户名.github.io/&lt;/em&gt;，就可以看到你刚创建的美观、个性化的完整版网站~&lt;/p&gt;
+
+&lt;p&gt;此后，你只需在本地 &lt;em&gt;_post&lt;/em&gt; 文件夹里新增文章，再像上一步那样（只有第二条命令的 &lt;em&gt;-m&lt;/em&gt; 后面的引号内信息需要每次修改）推送到 GitHub 上就可以更新自己的网站了。&lt;/p&gt;
+
+&lt;p&gt;至此，你已经完全完成了基于 GitHub Pages 的个人网站搭建，Cheers~&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;继续探索？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;每次修改都要推送到 GitHub 上才能看到效果，感觉太麻烦了？从 Jekyll 官方文档出发，搭建环境、配置相应文件，实现 GitHub Pages 的本地实时预览功能吧 ~&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 21 Feb 2016 17:15:49 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/welcome-to-jekyll</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/welcome-to-jekyll</guid>
+        <pubDate>Sun, 25 Mar 2018 15:56:00 +0800</pubDate>
+        <link>https://honghzh.github.io/guidance/github-pages/github-pages-guidance01</link>
+        <guid isPermaLink="true">https://honghzh.github.io/guidance/github-pages/github-pages-guidance01</guid>
         
-        <category>jekyll</category>
-        
-        <category>ruby</category>
+        <category>Guidance</category>
         
         
-        <category>jekyll</category>
+        <category>guidance</category>
         
-        <category>update</category>
+        <category>github-pages</category>
+        
+      </item>
+    
+      <item>
+        <title>入门 | Git 、GitHub 与 GitHub Pages 原理的生动介绍</title>
+        <description>&lt;p&gt;本文面向零基础，追求生动、直观。阅读后就能在直观上理解 Git 是什么，GitHub 是什么，以及GitHub Pages 是怎么实现的？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Git&lt;/strong&gt; 是一个免费开源的版本控制工具。&lt;/p&gt;
+
+&lt;p&gt;版本控制是什么意思？&lt;/p&gt;
+
+&lt;p&gt;比如，你想对电脑上某个文件夹进行版本控制，你首先会告诉 Git :&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“就是这个文件夹，它的一举一动都给我仔细盯好了！”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Git 就会把这个文件夹看成一个仓库（repository）来照看它，仓库里多了什么、少了什么，都逃不过 Git 的眼睛。&lt;/p&gt;
+
+&lt;p&gt;接着，你在这个文件夹（Git 已经把它看成仓库）删了一些文件，又新建了一些文件，还修改了一些文件。&lt;/p&gt;
+
+&lt;p&gt;随后你告诉 Git ：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“我刚刚改了点东西，你都看到了吧？这是它的一个新版本了，记住它。”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Git 就会在小本子上记下：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“某年某月某日，这个人提交了这个仓库（repository）的一个新版本，现在仓库（repository）里有这些文件，文件的内容分别是XXXXXXX…“&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;很多天过去了，你又作了很多改动，提交了很多个版本。你已经没法完整记得自己改了什么，但是你知道，自己的某一个改动错了，你的工作没法进行下去了，你需要把这个文件夹恢复到那一天提交的那个版本。你就可以跟 Git 说：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“请把这个文件夹(或者说仓库,repository)恢复到某年某月某日我提交的那个版本”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Git 就会翻看它的小本子，看到自己之前写的记录，想道：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“那个版本有这些文件，文件内容是XXXXXX，现在的仓库内容却是YYYYYY，和那个版本在xxx地方有一些差异，多出了yyyy，少了xxxx，根据比较结果，开始把现在的这个仓库(repository，或者说文件夹)改变回那天提交的版本…Done.”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这样，你就会看到这个文件夹里的文件和内容都变回那一天提交的那个版本了。&lt;/p&gt;
+
+&lt;p&gt;你可以让 Git 对同一个仓库（repository）建立很多本这种用来“记录版本”的相互独立的小本子，还可以把这些本子放到网络服务器上，别人就可以根据你发布到网上的“小本子”来更新、同步到他们本地的仓库。这些放在网络服务器上的小本子叫“远程分支”，储存在网上、使用这些远程分支进行“版本控制”的文件夹(repository)叫做“远程仓库”(remote repository)。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GitHub&lt;/strong&gt; 是由一批优秀程序员搭建起来的 Git 远程仓库的&lt;strong&gt;免费托管平台&lt;/strong&gt;，只需要在 GitHub 网站进行简单账户设置，让它和本地的 Git 客户端关联起来，就可以实现在线版本管理、同步甚至多人协作的功能，而不用自己搭建服务器了，岂不美哉？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt; 的原理就是读取你发布到 GitHub 上的特定远程仓库，把里面的文件渲染成对应的网页，并用它自己的服务器帮你把网页搭建在以你的用户名作为一部分命名的网址上( 例如 http://username.github.io/ )，现在你对整个原理应该有大致理解了~&lt;/p&gt;
+
+&lt;p&gt;现在可以在 &lt;a href=&quot;/guidance/github-pages/github-pages-guidance01&quot;&gt;指南 | Windows下使用 GitHub Pages 搭建个人博客&lt;/a&gt; 中继续 GitHub Pages 探索之旅了~&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 25 Mar 2018 15:56:00 +0800</pubDate>
+        <link>https://honghzh.github.io/abc/github-pages/git-and-github-pages-abc</link>
+        <guid isPermaLink="true">https://honghzh.github.io/abc/github-pages/git-and-github-pages-abc</guid>
+        
+        <category>Guidance</category>
+        
+        
+        <category>abc</category>
+        
+        <category>github-pages</category>
         
       </item>
     

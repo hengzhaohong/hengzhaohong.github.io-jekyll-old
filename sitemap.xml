@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://yourdomain.com/jekyll/update/welcome-to-jekyll</loc>
-<lastmod>2016-02-21T17:15:49+08:00</lastmod>
+<loc>https://honghzh.github.io/abc/github-pages/git-and-github-pages-abc</loc>
+<lastmod>2018-03-25T15:56:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://yourdomain.com/about/</loc>
+<loc>https://honghzh.github.io/guidance/github-pages/github-pages-guidance01</loc>
+<lastmod>2018-03-25T15:56:00+08:00</lastmod>
 </url>
 <url>
-<loc>http://yourdomain.com/tag/jekyll/</loc>
+<loc>https://honghzh.github.io/about/</loc>
 </url>
 <url>
-<loc>http://yourdomain.com/tag/ruby/</loc>
+<loc>https://honghzh.github.io/tag/guidance/</loc>
 </url>
 <url>
-<loc>http://yourdomain.com/category/jekyll/</loc>
+<loc>https://honghzh.github.io/category/abc/</loc>
 </url>
 <url>
-<loc>http://yourdomain.com/category/update/</loc>
+<loc>https://honghzh.github.io/category/github-pages/</loc>
 </url>
 <url>
-<loc>http://yourdomain.com/collection/posts/</loc>
+<loc>https://honghzh.github.io/category/guidance/</loc>
+</url>
+<url>
+<loc>https://honghzh.github.io/collection/posts/</loc>
 </url>
 </urlset>

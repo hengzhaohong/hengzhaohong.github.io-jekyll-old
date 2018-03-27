@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>指南 Windows下使用 GitHub Pages 搭建个人博客 | Honghzh</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="指南 Windows下使用 GitHub Pages 搭建个人博客" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="这两天偶然看到了一篇基于 GitHub Pages 的博文，之前对 GitHub Pages 早有耳闻，遂怀着兴趣研究了一下。这篇指南使用的是探索的视角，一步步呈现从无到有的详细过程，包括研究官方指引、带逛英文文档、分析步骤原理等。" />
+<meta property="og:description" content="这两天偶然看到了一篇基于 GitHub Pages 的博文，之前对 GitHub Pages 早有耳闻，遂怀着兴趣研究了一下。这篇指南使用的是探索的视角，一步步呈现从无到有的详细过程，包括研究官方指引、带逛英文文档、分析步骤原理等。" />
+<link rel="canonical" href="https://honghzh.github.io/guidance/github-pages/github-pages-guidance01" />
+<meta property="og:url" content="https://honghzh.github.io/guidance/github-pages/github-pages-guidance01" />
+<meta property="og:site_name" content="Honghzh" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-25T15:56:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<script type="application/ld+json">
+{"description":"这两天偶然看到了一篇基于 GitHub Pages 的博文，之前对 GitHub Pages 早有耳闻，遂怀着兴趣研究了一下。这篇指南使用的是探索的视角，一步步呈现从无到有的详细过程，包括研究官方指引、带逛英文文档、分析步骤原理等。","@type":"BlogPosting","url":"https://honghzh.github.io/guidance/github-pages/github-pages-guidance01","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://honghzh.github.io/assets/images/example-image.png"}},"headline":"指南 Windows下使用 GitHub Pages 搭建个人博客","dateModified":"2018-03-25T15:56:00+08:00","datePublished":"2018-03-25T15:56:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://honghzh.github.io/guidance/github-pages/github-pages-guidance01"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,600">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="alternate" type="application/rss+xml" title="Honghzh" href="https://honghzh.github.io/feed.xml">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Honghzh</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+            <a class="page-link" href="/about/">关于</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">指南 | Windows下使用 GitHub Pages 搭建个人博客</h1>
+    <ul class="category">
+  <li class="category__label">Categories: </li>
+  
+    <li class="category__item"><a href="https://honghzh.github.io/category/guidance" title="guidance">guidance</a></li>
+  
+    <li class="category__item"><a href="https://honghzh.github.io/category/github-pages" title="github-pages">github-pages</a></li>
+  
+</ul>
+    <p class="post-meta"><time datetime="2018-03-25T15:56:00+08:00" itemprop="datePublished">Mar 25, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>这两天偶然看到了一篇基于 GitHub Pages 的博文，之前对 GitHub Pages 早有耳闻，遂怀着兴趣研究了一下。这篇指南使用的是探索的视角，一步步呈现从无到有的详细过程，包括研究官方指引、带逛英文文档、分析步骤原理等。</p>
+
+<p>根据<a href="https://pages.github.com/"> GitHub Pages 官网</a>的介绍，</p>
+
+<blockquote>
+  <p>Websites for you and your projects.
+Just edit, push, and your changes are live.</p>
+</blockquote>
+
+<p>使用 GitHub Pages 可以在短时间内搭建出精美、个性的博客网站。只需要专注于编辑文章内容，放入预先提供好的模板，再提交给 GitHub Pages，就可以看到自己发布的网站了。</p>
+
+<p>精致，简单，免费，这真是太棒了，现在就开始吧。</p>
+
+<h2 id="在-github-上启用-github-pages">在 GitHub 上启用 GitHub Pages</h2>
+
+<p>本节主要将引导阅读<a href="https://pages.github.com/"> GitHub Pages 官网</a>下方的快速指南。本节结束时，在浏览器输入网址就能看到属于自己的、新生的基础网站了。</p>
+
+<p>官方指引的第一步：</p>
+
+<blockquote>
+  <p>Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.</p>
+</blockquote>
+
+<p>眼下，如果你不了解Git、GitHub或repository（翻译为”库”），那么你需要阅读下面的基础准备。</p>
+
+<h3 id="基础准备安装git拥有一个github-账号">基础准备：安装Git，拥有一个GitHub 账号</h3>
+
+<p>理解了原理，才能更好地学习，如果你暂时对 Git 一无所知，或者想先对 GitHub Pages 的原理有大致直观的把握？我写了一篇短文，它就是为此而生的，这篇短文将很有助于你对接下来步骤的理解：<a href="/abc/github-pages/git-and-github-pages-abc">入门 | Git 、GitHub 与 GitHub Pages 原理的生动介绍</a></p>
+
+<p>首先，从<a href="https://git-scm.com/"> Git 官网</a>上下载 Git 并安装，安装完成后，右键菜单会多出 Git Bash Here 这一项即可，后面将用到。</p>
+
+<p>如果还没有 GitHub账号，先在<a href="https://github.com/"> GitHub </a>上注册一个，只需不到 2 分钟。</p>
+
+<p>接着，如果是刚注册 GitHub 账号，还需要关联本地 Git 客户端：在 Settings-SSH and GPG keys 中关联自己本地 Git 用户的 SSH Key，具体步骤可参考<a href="https://help.github.com/articles/connecting-to-github-with-ssh/">GitHub帮助文档</a>后四篇。</p>
+
+<p>基础准备完成后，你就可以正常使用 Git 和 GitHub ，下一步从官方指引出发，开始愉快的 GitHub Pages 探索之旅吧。</p>
+
+<h3 id="新建一个远程库">新建一个远程库</h3>
+
+<p>首先，登录 GitHub ，在导航条加号菜单中点击 New repository 进入新建远程库的界面（库的概念见上文的简单介绍）。</p>
+
+<p>页面要求填写库的基本信息，在 Repository name (就是库名，也就是受到 Git 版本控制的文件夹名)中输入 <em>自己的 GitHub用户名.github.io</em>，比如若 GitHub 账号名是<em>username</em>，那么库名就应设置成 <em>username.github.io</em>，这个命名方式是 GitHub Pages 规定好的，这个库名其实也是我们个人网站的地址。</p>
+
+<p>其他选项可默认，填写完毕后点击 Create Repository 即可。</p>
+
+<h3 id="将远程库克隆到本地">将远程库克隆到本地</h3>
+
+<p>新建远程库之后，进入刚才的库中，将库 Clone 到本地自己的一个文件夹中。</p>
+
+<p>具体步骤可以是：</p>
+
+<ol>
+  <li>
+    <p>点击导航条上的头像菜单-点击 Your profile，打开的页面中点击 Overview 旁边的 Repositories 选项卡，选择刚建的库。</p>
+  </li>
+  <li>
+    <p>在库的文件列表的上方，右侧有一个绿色按钮 Clone or download，点开，复制中部的 SSH key，比如 <em>git@github.com:honghzh/demo2.git</em>。</p>
+  </li>
+  <li>
+    <p>在本地新建一个文件夹用来存放个人网站，比如命名为 My_Page，进入 My_Page，右键菜单– Git Bash Here，在打开的 Git 终端上输入并回车执行</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/username/username.github.io
+</code></pre></div>    </div>
+
+    <p>其中，<em>git clone</em> 后面的地址是自己在第2步复制的 SSH Key，不同用户的 <em>username</em> 部分是不同的。</p>
+
+    <p>这个命令意思是将远程库地址是 <em>git@github.com:username/username.github.io.git</em> 的远程仓库同步到本地。</p>
+  </li>
+</ol>
+
+<h3 id="写一个基础网页推到远程库中">写一个基础网页，推到远程库中</h3>
+
+<p>最后，在 Git 终端中依次输入并执行以下五条命令即可：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd username.github.io
+echo "Hello World" &gt; index.html
+git add .
+git commit -m "Initial commit"
+git push origin master
+</code></pre></div></div>
+
+<p>对此的解释：</p>
+
+<p>第一行 cd username.github.io 意思是进入名为username.github.io的文件夹。</p>
+
+<p>第二行 echo “Hello World” &gt; index.html 是在文件夹中新建一个名为 index.html 的 HTML 文件并在其中写入  Hello World ，此处只是示例，我们等下真正写博客内容的时候并不用这种方式写入。</p>
+
+<p>第三行开始使用 Git 的版本控制功能，第三行 git add . 意思就是将username.github.io文件夹里的所有变动记录到暂存区（注意命令最后有一个点）。</p>
+
+<p>第四行 git commit -m “Initial commit” 意思是将之前暂存的变动作为一个新的版本提交给 Git ，这个版本的描述信息是“Initial commit”。</p>
+
+<p>第五行 git push origin master 意思是将最新的本地版本同步到代号为 origin 的远程库中（在<code class="highlighter-rouge">git clone</code>的时候，Git 已经自动将这个本地库的关联的 origin 定义成你 clone 时复制的目标远程库， master 是默认分支名，分支相当于一条独立的版本变动记录，一个库可以有多个分支），执行完毕后刷新GitHub的远程库，会发现其中的文件被改变了，即远程的版本被你更新了。</p>
+
+<h3 id="新网页诞生">新网页诞生</h3>
+
+<p>至此，本节完成，现在在地址栏中输入 <code class="highlighter-rouge">"https://你的用户名.github.io"</code>，就可以看到刚刚创建的个人网页了，虽然只有最基本的 Hello World 字样，但下一节引入官方预设的主题模板后，界面将十分美观。</p>
+
+<h2 id="引入网站模板">引入网站模板</h2>
+
+<p>本节讲述如何在 GitHub Pages 上套用官方或社区提供的精美模板，完成后，网站将变得精致美观、五脏俱全。</p>
+
+<h3 id="从-github-pages-到-jekyll">从 GitHub Pages 到 Jekyll</h3>
+
+<p>在 <a href="https://pages.github.com/">GitHub Pages 官网</a>在快速指引的结尾写着这样一段话：</p>
+
+<blockquote>
+  <p><strong>Bloging with Jekyll</strong></p>
+
+  <p>Using Jekyll, you can blog using beautiful Markdown syntax, and without having to deal with any databases. <a href="https://jekyllrb.com/docs/quickstart/"><strong>Learn how to set up Jekyll</strong></a>.</p>
+</blockquote>
+
+<p>原来，使用一个叫 Jekyll 的工具，就可以省去自己搭建网站的麻烦，只需要专注于编辑内容，这正是我们想要的。</p>
+
+<p>点开它附上的链接：<a href="https://jekyllrb.com/docs/quickstart/"><strong>Learn how to set up Jekyll</strong></a>，我们进入了 Jekyll 官方的 Quick-start 指引。这个指引开头列出了一大堆基本命令，比如：</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a new Jekyll site at ./myblog</span>
+<span class="n">jekyll</span> <span class="n">new</span> <span class="n">myblog</span>
+</code></pre></div></div>
+
+<p>注意到第一行的注释，发现这个指引是教我们如何从一个空荡荡的网站开始，从零构建出我们的网站的。</p>
+
+<p>那么，<strong>有没有人已经按这个指引构建出一个结构完整的网站，顺带设计好样式，然后发布到网上供我们直接套用呢？</strong></p>
+
+<p>有！他们把模板放在他们 GitHub 的仓库上，甚至还写了详细的说明文档，教你怎么使用他们的模板。许多设计精美的模板被 Jekyll 官方收录在<a href="http://jekyllthemes.org/">这里</a>，直接套用它们（或在其基础上自己改写）是最快最有效率的方法。</p>
+
+<h3 id="套用-jekyll-主题模板">套用 Jekyll 主题模板</h3>
+
+<p>现在，访问官方收录的模板 <a href="http://jekyllthemes.org/">Jekyll Themes</a>，选择一个你觉得好看的模板，这里选择 Prologue 主题为例：<a href="http://jekyllthemes.org/themes/jekyll-theme-prologue/">Prologue</a>，点击按钮“Download”下载它的zip文件。</p>
+
+<p>解压后是一个名为“jekyll-theme-prologue-master”的文件夹，进入该文件夹，把内部所有的文件复制进你之前从自己 GitHub 上克隆下来的那个文件夹(就是和你的网站的远程仓库关联的本地仓库)。若提示冲突，则选择替换。</p>
+
+<p><strong>不确定哪个是本地的网站文件夹（仓库）？</strong></p>
+
+<ul>
+  <li>
+    <p>因为从 GitHub 上 clone 下来的仓库，会自动和 GitHub 的远程仓库<strong>同名</strong>，所以你本地的网站文件夹（仓库）的名称应该是“你的用户名.github.io”，注意不要删掉里面的“.git”文件夹。</p>
+  </li>
+  <li>
+    <p>一个 Git 仓库最明显的特征是：仓库里会有一个名为“.git”的隐藏文件，那是 Git 用来做版本记录的“小本子”。</p>
+  </li>
+</ul>
+
+<h3 id="同步到-github">同步到 GitHub</h3>
+
+<p>GitHub Pages 实质上是用它自己的服务器，将你放在 GitHub 上的某个远程仓库（repository）渲染成你的个人网站。我们刚才已经将模板放进了自己的本地仓库中，那么剩下要做的就是把它推送到自己 GitHub 的远程仓库上，我们的个人网站就会自动更新。</p>
+
+<p>在网站仓库根目录下右键-&gt; Git Bash Here 打开 Git 终端，依次输入并执行以下三条命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
+git commit -m "引入网站模板"
+git push origin master
+</code></pre></div></div>
+
+<p>解释：这三条命令让 Git 终端把当前仓库的状态记录为一个新的版本（前两行），并且同步到 GitHub 对应的远程仓库中（第三行）。详细同第一步中的解释。</p>
+
+<h3 id="精致美观的网站">精致美观的网站</h3>
+
+<p>现在，GitHub 上的远程仓库已经改变，访问我们的个人网址 <em>https://你的用户名.github.io</em> 就可以看到更新后的个人网站了。虽然其中的文字内容还只是模板的示例内容，但这已是从无到有，再到美观的一大进步了~</p>
+
+<h2 id="发表第一篇文章">发表第一篇文章</h2>
+
+<p>本节将指引阅读刚才下载的主题模板自带的文档，从而可以修改文字内容，真正完成一个自己的网站。</p>
+
+<p>首先，我们回到刚才在 <a href="http://jekyllthemes.org/">Jekyll Themes</a> 中挑选的主题，比如 Prologue ，看到<a href="http://jekyllthemes.org/themes/jekyll-theme-prologue/">Prologue</a>页面下方的 Getting Started :</p>
+
+<blockquote>
+  <p>Information and special instructions on GitHub.</p>
+</blockquote>
+
+<p>好的，详细的编辑指南在他们的 GitHub 里，我们点击页面上方的 Homepage 进入 <a href="https://github.com/chrisbobbe/jekyll-theme-prologue">Prologue主题的 GitHub</a>。</p>
+
+<p>在这个远程仓库里向下滚动，就看到了说明文档：</p>
+
+<p>（所有主题的功能架构都是统一的，因此其他的主题即使没有这份文档，配置方法也和这篇几乎相同）</p>
+
+<h3 id="prologue---jekyll-theme-文档">Prologue - Jekyll Theme 文档</h3>
+
+<ul>
+  <li>
+    <p>开头是主题的简单介绍。（忽略）</p>
+  </li>
+  <li>
+    <p><strong>Added Features</strong></p>
+
+    <p>这个版本增加的新特性有…（忽略）</p>
+  </li>
+  <li>
+    <p><strong>Installation</strong></p>
+
+    <p>引入模板的方法，这里写了两种方法。我们刚刚用的是第二种。（因为刚才已经安装好了，所以这步也忽略）</p>
+  </li>
+  <li>
+    <p><strong>Build your homepage</strong></p>
+
+    <p><strong>重点</strong>：从这里开始介绍怎么把网站修改成自己的。</p>
+
+    <ol>
+      <li>网站的所有基础配置（比如网站名称、结构、作者信息等等）都在 <em>_config.yml</em> 文件里，这个文件可以用文本编辑器打开（比如 <a href="https://code.visualstudio.com/">VS Code</a>）修改。
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># _config.yml 摘选，只需修改冒号后的内容，不需要的放空即可
+title: Your awesome title #你的网站名称
+subtitle: Your awesome subtitle #你的网站副名称
+author: Your Incredible Name #博主ID
+email: your-email@example.com # 你的邮箱
+avatar: assets/images/avatar.jpg # Logo地址
+...
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>所有你需要发布的文章，只需放入 <em>_posts</em> 文件夹里，一般里面都会有几篇示例文章，文章后缀名一般是 .md 或 .markdown ，因而这个文件夹很好识别。</p>
+
+        <p>在一篇文章的开头可以进行一些标题、标题配图、标签等等的独立配置，下一个标题后会告诉你怎么配置。</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Start blogging !</strong></p>
+
+    <p>这里开始教你怎么新增一篇文章。</p>
+
+    <p>首先，使用文本编辑器（比如 <a href="https://code.visualstudio.com/">VS Code</a>）在 _posts 文件夹中新建一个 markdown 文件，比如 newArticle.md 。</p>
+
+    <ul>
+      <li>
+        <p><strong>配置文章信息</strong></p>
+
+        <p>在文章的开头进行基本信息的声明，以三个短横线 --- 开头，三个短横线 --- 结尾，比如：</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: 文章的标题
+layout: 这篇文章
+---
+</code></pre></div>        </div>
+        <p>模板就会自动把这些信息渲染到网站上合适的位置，或实现所需的功能（比如按文章标签分类），具体可以查看已有的示例文章进行理解、模仿。</p>
+
+        <p>可能有的主题需要你设置文章的发表日期，注意把时间写早一点，比如比现在少8小时，否则由于时区问题，可能最后看不到自己新增的这篇文章。</p>
+      </li>
+      <li>
+        <p><strong>使用 markdown 语法写作</strong></p>
+
+        <p>这里的文章一般使用 markdown 语法写成（比如本文），文件后缀名为 <em>.md</em> 或 <em>.markdown</em>。markdown 是一种美观易学的写作方式，已经受到很多主流的笔记类 APP 支持。只需在文本基础上增加少量符号，就可以自动美化排版。如果现在不会的话，不妨在编辑文章时按需求参考<a href="https://www.appinn.com/markdown/">Markdown简明语法</a>，很快就能运用自如。</p>
+
+        <p>现在就可以使用 markdown 写一篇小短文了，整个 <em>myArticle.md</em> 文件的内容可以类似这样：</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: 文章的标题
+layout: 这篇文章
+---
+
+这是我的第一篇文章。
+
+## 前言
+
+第一段，注意markdown语法要求标题的#号后面跟一个空格，否则那只会被看作普通的#号。
+
+第二段，注意markdown语法要求两段之间隔一整个空行。
+
+## 正文标题一
+
+正文第一段
+
+...
+</code></pre></div>        </div>
+        <p>写好后保存即可，注意<strong>文件名不应该有中文</strong>（因为文件名也会被设置成这篇文章的子网址），一般还会要求你把文件命名为 <em>日期-英文简要标题.md</em> 的格式，比如 <em>2018-03-25-github-pages-guidance01.md</em> ，和本文的地址栏比较就很好理解了。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Add a page</strong></p>
+
+    <p>这里教你怎么在网站上新建一个独立页面（比如 <em>About</em> 页面），这个页面的链接默认将在导航栏上显示。</p>
+
+    <p>步骤：你只需要在网站文件夹根目录下新建一个 markdown 文件，和刚才写文章一样，写入基本信息和正文内容，保存即可。文件名是这个页面的子网址，文件里设置的 <em>title</em> 会显示在导航栏上，在文件内配置 <em>hide:true</em> 可以使该页面不显示在导航栏。</p>
+  </li>
+</ul>
+
+<p><strong>我们的主要做：</strong>根据文档，我们重新编辑了 <em>_config.yml</em> 文件，并在 <em>_post</em> 文件夹里把原有的示例文章删除，新增了自己的文章。</p>
+
+<h3 id="其他文件夹的功能">其他文件夹的功能</h3>
+
+<p>因为所有主题的文件结构都是统一的，我们还可以研究一下其他的文件夹的作用。通过浏览<a href="https://jekyllrb.com/docs/quickstart/">Jekyll官方文档</a>可以知道详细，直观地说，<em>_includes</em> 就是网站的基础组件，包括导航条、网站头部等等，<em>_layout</em> 就是利用基础文件组成网站各部分页面的高级组件。<em>_assets</em> 是存放网站样式、动态效果的地方，<em>_section</em> 管理网站的主页应显示的内容，<em>_site</em> 是编译好的网页文件夹，<em>_index.html</em> 就是整个网站的入口文件。</p>
+
+<p>有的主题可能不全含有上述的文件夹，但是基本功能和文件结构是大同小异的。</p>
+
+<h3 id="发布新增的文章">发布新增的文章</h3>
+
+<p>现在可以向 GitHub 发布新增的文章和改好的信息了，同样上文一样，网站文件夹根目录下，右键-&gt;Git Bash Here，依次执行下面三行命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
+git commit -m "新增文章，修改配置"
+git push origin master
+</code></pre></div></div>
+
+<p>刚才在本地仓库作的改动就被同步到了 GitHub 的对应远程仓库上。</p>
+
+<h3 id="完整的个人网站">完整的个人网站</h3>
+
+<p>现在输入网址 <em>https://你的用户名.github.io/</em>，就可以看到你刚创建的美观、个性化的完整版网站~</p>
+
+<p>此后，你只需在本地 <em>_post</em> 文件夹里新增文章，再像上一步那样（只有第二条命令的 <em>-m</em> 后面的引号内信息需要每次修改）推送到 GitHub 上就可以更新自己的网站了。</p>
+
+<p>至此，你已经完全完成了基于 GitHub Pages 的个人网站搭建，Cheers~</p>
+
+<hr />
+
+<p><strong>继续探索？</strong></p>
+
+<p>每次修改都要推送到 GitHub 上才能看到效果，感觉太麻烦了？从 Jekyll 官方文档出发，搭建环境、配置相应文件，实现 GitHub Pages 的本地实时预览功能吧 ~</p>
+
+
+    <ul class="tag">
+  <li class="tag__item"><strong>Tags: </strong></li>
+  
+    <li class="tag__item"><a href="https://honghzh.github.io/tag/Guidance" title="Guidance">#Guidance</a></li>
+  
+</ul>
+  </div>
+
+</article>
+
+
+<div class="pagination">
+  
+    <a href="/abc/github-pages/git-and-github-pages-abc" class="pagination__previous">
+        <svg class="pagination__icon" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
+          <title>chevronLeft icon</title>
+          <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+        </svg>
+      <span class="pagination__previous-text">Previous</span>
+    </a>
+  
+  
+    <span class="pagination__next--edge">
+      <span class="pagination__next-text">Next</span>
+    </span>
+  
+</div>
+
+<div class="related-posts">
+  <h3>Related Posts</h3>
+
+  <ul>
+    
+      <li>
+        <a href="/abc/github-pages/git-and-github-pages-abc">
+          入门 | Git 、GitHub 与 GitHub Pages 原理的生动介绍
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Honghzh</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>My Email</li>
+          <li><a href="mailto:honghz29@foxmail.com">honghz29@foxmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/honghzh"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">honghzh</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>可能包含了日常知识小记和一些前端、Python、各种Tools的个人实践(爬坑)指南。</p>
+        <p>有可能是超认真教程，也有可能是有点杂乱的随笔，十分随心。</p>
+      </div>
+
+      <section style="font-size: 10px; padding-left: 15px;">Powered by <a href="https://jekyllrb.com/">Jekyll</a> &copy; 2018 <a href="">Honghzh</a></section>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
