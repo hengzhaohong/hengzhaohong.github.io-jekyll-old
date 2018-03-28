@@ -6,21 +6,28 @@
 </description>
     <link>https://honghzh.github.io/</link>
     <atom:link href="https://honghzh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Mar 2018 21:56:18 +0800</pubDate>
-    <lastBuildDate>Wed, 28 Mar 2018 21:56:18 +0800</lastBuildDate>
+    <pubDate>Wed, 28 Mar 2018 22:30:24 +0800</pubDate>
+    <lastBuildDate>Wed, 28 Mar 2018 22:30:24 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>指南 | Windows 下 GitHub Pages 本地调试</title>
         <description>&lt;p&gt;本文将带你以 Jekyll 英文文档为起点，延伸探索、集齐龙珠，实现&lt;strong&gt;实时预览&lt;/strong&gt;的 GitHub Pages 写作体验。&lt;/p&gt;
 
+&lt;p&gt;GitHub Pages 系列文章：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/abc/github-pages/git-and-github-pages-abc&quot;&gt;入门 | Git 、GitHub 与 GitHub Pages 原理的生动介绍&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/guidance/github-pages/github-pages-guidance01&quot;&gt;指南 | Windows 下使用 GitHub Pages 搭建个人博客&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/guidance/github-pages/github-pages-guidance02&quot;&gt;指南 | Windows 下 GitHub Pages 本地调试&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
 
-&lt;p&gt;实际上，用 GitHub Pages 写文章，我们只需要下载模板、修改模板、推送到 GitHub ，三步就能实现（从&lt;a href=&quot;/guidance/github-pages/gihub-pages-guidance01&quot;&gt;上一篇&lt;/a&gt;容易体会）。然而，每次修改模板后都需要推送到 GitHub 上才能看到自己编辑的效果。&lt;/p&gt;
+&lt;p&gt;实际上，用 GitHub Pages 写文章，我们只需要下载模板、修改模板、推送到 GitHub ，三步就能实现（从&lt;a href=&quot;/guidance/github-pages/github-pages-guidance01&quot;&gt;上一篇&lt;/a&gt;容易体会）。然而，每次修改模板后都需要推送到 GitHub 上才能看到自己编辑的效果。&lt;/p&gt;
 
 &lt;p&gt;有没有方法可以在本地浏览器上直接看到自己编辑的效果，只要有微小改动，保存后轻点刷新，就能看到最新的预览呢？&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/guidance/github-pages/gihub-pages-guidance01&quot;&gt;上一篇&lt;/a&gt;我们跳过了 Jekyll 大部分文档，直接下载主题模板，为了解决这个问题，我们不得不重新打开 &lt;a href=&quot;https://jekyllrb.com/docs/quickstart/&quot;&gt;Jekyll 文档&lt;/a&gt;，研究 Jekyll 的些许运行原理了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/guidance/github-pages/github-pages-guidance01&quot;&gt;上一篇&lt;/a&gt;我们跳过了 Jekyll 大部分文档，直接下载主题模板，为了解决这个问题，我们不得不重新打开 &lt;a href=&quot;https://jekyllrb.com/docs/quickstart/&quot;&gt;Jekyll 文档&lt;/a&gt;，研究 Jekyll 的些许运行原理了。&lt;/p&gt;
 
 &lt;h1 id=&quot;在-jekyll-文档&quot;&gt;在 Jekyll 文档&lt;/h1&gt;
 
@@ -241,8 +248,8 @@ git push origin master
 
 </description>
         <pubDate>Tue, 27 Mar 2018 02:00:00 +0800</pubDate>
-        <link>https://honghzh.github.io/guidance/github-pages/gihub-pages-guidance02</link>
-        <guid isPermaLink="true">https://honghzh.github.io/guidance/github-pages/gihub-pages-guidance02</guid>
+        <link>https://honghzh.github.io/guidance/github-pages/github-pages-guidance02</link>
+        <guid isPermaLink="true">https://honghzh.github.io/guidance/github-pages/github-pages-guidance02</guid>
         
         <category>Guidance</category>
         
@@ -565,7 +572,7 @@ git push origin master
 
 &lt;p&gt;&lt;strong&gt;想要更优雅的操作，本地编辑、预览 GitHub Pages？&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;继续探索 &lt;a href=&quot;/guidance/github-pages/gihub-pages-guidance02&quot;&gt;指南 | Windows 下 GitHub Pages 本地调试&lt;/a&gt; 吧~&lt;/p&gt;
+&lt;p&gt;继续探索 &lt;a href=&quot;/guidance/github-pages/github-pages-guidance02&quot;&gt;指南 | Windows 下 GitHub Pages 本地调试&lt;/a&gt; 吧~&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 25 Mar 2018 15:56:00 +0800</pubDate>
