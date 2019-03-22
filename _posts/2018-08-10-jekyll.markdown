@@ -1,0 +1,336 @@
+---
+layout: post
+title:  "Jekyll 静态博客引擎"
+date:   2018-08-10 08:00:00 +0800
+categories: front guidance jekyll
+tags:
+- Guidance
+- Blog
+---
+
+Jekyll 是我认为在理念上最好的静态博客生成引擎，使用 Jekyll 可以让我们专注于写作内容，而不是被复杂的网站逻辑所困扰。
+
+<h3 style="font-weight:300">目录</h3>
+
+* 
+{:toc}
+
+## 基础
+
+### 本地热加载
+
+```
+$ jekyll serve --watch
+```
+
+<a id="global_config"></a>
+
+### 全局配置
+
+_config.yml 文件相当于命令行预配置，在这里面的配置等同于用命令行启动时在后面加入额外参数。
+
+比较实用的配置：
+* 改变时区：`timezone: TIMEZONE`，[可用的时区值][tz]
+* 用将来的日期发布文章：`future: BOOL`
+* 为相关文章生成索引： `lsi: BOOL`
+* 为文章设置链接格式： `permalink:xxx`，见[文章链接设置](#permalink)
+
+**不要在配置文件中使用制表符，应该使用空格**
+
+## 页面架构
+
+### 可复用界面
+
+在 _includes/ 文件夹中的东西可以被其他界面重用，引用方法是 {% raw %}`{% include filename.html %}`{% endraw %}
+
+### 多页面
+
+两种方法，区别是最终的 URL 显示方式。
+
+#### 方法一：新建以页面命名的 html
+
+比如根目录下新建 `about.html` 。
+
+最终 URL 里会有扩展名： `www.example.com/about.html`
+
+#### 方法二：新建以页面命名的文件夹
+
+比如根目录下新建 about 文件夹，文件夹里放如 index.html。
+
+最终 URL 里没有扩展名：`www.example.com/about`
+
+## 写作
+
+### 插入图片、可下载文件
+
+在网站文件夹根目录新建一个 assets 或 downloads 文件夹，将图片、下载文件等放在这个文件夹内。
+
+使用 markdown 的链接语法创建图片或下载链接。使用 `{% raw %}{{site.url}}{% endraw %}` 来引用网站的根目录路径，或者使用相对路径。
+
+```jekyll
+… 从下面的截图可以看到：
+{% raw %}![有帮助的截图]({{ site.url }}/assets/screenshot.jpg){% endraw %}
+
+… 你可以直接 {% raw %}[下载 PDF]({{ site.url }}/assets/mydoc.pdf).{% endraw %}
+```
+
+### 摘要
+
+Jekyll 会自动取每篇文章从开头到第一次出现 `excerpt_separator` 的地方作为文章的摘要， 并将此内容保存到变量 `post.excerpt` 中。
+
+自动摘要为文章第一段，如果要修改，可以在文件头增加 `excerpt` 来覆盖它。
+
+使用 `{% raw %}{{post.excerpt}}{% endraw %}` 引用摘要，但是摘要会自动被它自身的 html 标签（比如`<p></p>`）包裹，若要去掉，要加额外参数：
+
+```
+//去掉 p 标签
+{% raw %}{{ post.excerpt | remove: '<p>' | remove: '</p>' }}{% endraw %}
+
+//去掉摘要包含的所有 html 标签
+{% raw %}{{ post.excerpt | strip_html }}{% endraw %}
+```
+
+### 代码高亮、代码行数
+
+```
+{% raw %}
+{% highlight ruby %}
+Ruby 代码，不显示行数
+{% endhighlight %}
+
+{% highlight ruby linenos%}
+显示行数
+{% endhighlight %}
+{% endraw %}
+```
+
+高亮工具 Pygments 需要先安装 Python 并在 _config.yml 中设置 `pygments: true`。或者不安装 Python 而是使用 Rouge。
+
+可能还需要从 [syntax.css](https://github.com/mojombo/tpw/blob/master/css/syntax.css) 获得高亮样式文件，若要显示行数还需再 syntax.css 中加入 .lineno 样式
+
+### 草稿
+
+在根目录下创建 `_drafts` 文件夹，新建草稿如 `a-draft-post.md`
+
+预览草稿：`jekyll serve` 或 `jekyll build --drafts`
+
+### 头信息
+
+* **文章的日期**可以用 `date: YYYY-MM-DD HH:MM:SS +/-TTTT` 来指定不同于 UTC 的时区
+
+## 可用的变量
+
+### site
+
+全站范围的配置，变量值来自 _config.yml 文件，比如在 _config.yml 里设置 `custom_css: true`，那么就可以这样取到：`site.custom_css`
+
+* `site.time` 运行 `jekyll` 的时间点
+* `site.pages`、`site.posts`，所有页面或文章，其中 posts 按时间倒叙
+* `site.related_posts` 默认是低质量的相关文章计算，在 `jekyll` 命令后加入 `lsi` 进行高相关文章的计算（latent semantic indexing）。
+* `site.categories.CATEGORY`、`site.tags.TAG`，某一类型或标签的文章
+
+**过滤器 \| 时间：（语法，解释，输出示例）**
+
+* `{% raw %}{{ site.time | date_to_xmlschema }}{% endraw %}，日期转 XML，{{ site.time | date_to_xmlschema }}`
+* `{% raw %}{{ site.time | date_to_rfc822 }}{% endraw %}，日期转 RFC-822 用于RSS订阅，{{ site.time | date_to_rfc822 }}`
+* `{% raw %}{{ site.time | date_to_string }}{% endraw %}，日期转短格式，{{ site.time | date_to_string }}`
+* `{% raw %}{{ site.time | date_to_long_string }}{% endraw %}，日期转长格式，{{ site.time | date_to_long_string }}`
+
+### page
+
+自定义的头文件信息在 page 中可用，比如在头信息里设置 `custom_css: true`，那么就可以这样取到：`page.custom_css`
+
+* `page.id` 唯一标识码，常用于 RSS 源
+* `page.title`、`page.excerpt`、`page.date`  标题、摘要和日期
+* `page.content`、`page.url`、`page.path` 页面内容的源码、相对路径（`/`开头）和源文件地址
+* `page.categories`、`page.tags` 文章所属分类（返回数组）和标签
+
+**过滤器 \| 功能与转码：承接上文 site 的过滤器（语法，解释，输出示例）**
+
+* `{% raw %}{{ page.content | number_of_words }}{% endraw %}，统计字数，1234`
+* `{% raw %}{{ page.content | xml_escape }}{% endraw %}，对一些字符串转码，方便显示在 XML`
+* `{% raw %}{{ "foo,bar;baz?" | cgi_escape }}{% endraw %}，CGI 转码，用于 URL 中，将所有的特殊字符转化为 %XX 的形式,{{ "foo,bar;baz?" | cgi_escape }}`
+* `{% raw %}{{ "foo, bar \\baz?" | uri_escape }}{% endraw %}，URI转码，{{ "foo, bar \\baz?" | uri_escape }}`
+* `{% raw %}{{ page.tags | array_to_sentence_string }}{% endraw %}，数组转换成句子，尤其列举标签时，{{ page.tags | array_to_sentence_string }}`
+* `{% raw %}{{ page.excerpt | textilize }}{% endraw %}，将 Textile 格式的字符串转换为 HTML ，使用 RedCloth`
+* `{% raw %}{{ page.excerpt | markdownify }}{% endraw %}，将 Markdown 格式的字符串转换为 HTML `
+* `{% raw %}{{ site.data.projects | jsonify }}{% endraw %} ，将 hash 值或数组转化为 JSON`
+
+### paginator
+
+分页器变量。**这些变量只在 `index.html` 中可以用。**
+
+* `paginator.per_page`、`paginator.total_posts` 每页文章数、总文章数
+* `paginator.page`、`paginator.total_pages` 当前页号、总页数
+* `paginator.previous_page`、`paginator.next_page` 前一页页号、下一页页号
+* `paginator.posts` 这一页可用的 posts，用于分页时遍历
+* `paginator.previous_page_path`、`paginator.next_page_path` 前一页的地址，后一页的地址
+
+分页功能的实现方法：[Jekyll 中文文档 \| 分页](https://www.jekyll.com.cn/docs/pagination/)
+
+### _data/
+
+在根目录下新建 _data/ 文件夹，里面放置 .yml 或 .yaml 文件，**文件名 = 变量名**，用于批量渲染数据，调用方式是 `{{site.data.VARIABLE_NAME}}`。
+
+例子，_data/menbers.yml:
+
+```yml
+- name: Tom
+  github: tom.github.io
+  
+- name: Jerry
+  github: jerry.github.io
+```
+
+调用时：
+
+```
+{% raw %}<ul>
+{% for m in site.data.members %}
+  <li>
+    <a href="https://{{ m.github }}">
+      {{ m.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>{% endraw %}
+```
+
+## 模板语法
+
+### 引用
+
+* 引用代码片段，使用 {% raw %}`{% include footer.html %}`{% endraw %}，为此需要把 footer.html 放到根目录的 _includes/ 文件夹里。
+* 传参 {% raw %}`{% include footer.html param="value" %}`{% endraw %} ，与调用 {% raw %}`{{ include.param }}`{% endraw %}
+
+### 文章链接
+
+使用 `post_url` ，不需要写文件后缀名
+
+* `{% raw %}{% post_url 2018-01-01-name-of-post %}{% endraw %}` 生成文章链接
+* 若文章在子文件夹，需要写在相对路径中：`{% raw %}{% post_url /subdir/2010-07-21-name-of-post %}{% endraw %}`
+* 在 markdown 中生成文章链接：`{% raw %}[Name of Link]({% post_url 2010-07-21-name-of-post %}){% endraw %}`
+
+### GitHub Gist
+
+Gist 是一个代码分享的签名工具，可以使用 Gist 向他人分享自己托管在 GitHub Gist 平台上的代码片段。签名还有保护功能，比如私有 gist 可以防止代码被搜索引擎搜索到，等等。
+
+使用 `gist` 可以将 GitHub Gist 签入：
+
+```
+{% raw %}{% gist 521521 %}{% endraw %}
+```
+
+可以指定文件名：
+
+```
+{% raw %}{% gist 521521 result.md %}{% endraw %}
+```
+
+支持私有 gist ，为此需要 gist 所属的 github 用户名，比如:
+
+```
+{% raw %}{% gist parkr/931c1c8d465a04042403 %}{% endraw %}，它也支持文件名。
+```
+
+## 外观
+
+### 样式
+
+Jekyll 支持 Sass 和 CoffeeScript，将 .scss、.sass、.coffee 文件放于根目录下的特定文件夹。
+
+样式文件的通用格式，页面开头两行，每行三条短横线：
+
+```
+---
+---
+
+//start content
+.my-d
+  font-size: 1.2em
+```
+
+使用 Sass/SCSS：需要在 _config.yml 中添加配置：
+
+```
+sass:
+    sass_dir: _sass #Sass 文件的根目录相对路径，默认是 _sass
+    style: compressed
+```
+
+然后在网站根目录的 _sass 文件夹中建立自己的 .scss 文件。
+
+<p id="permalink"></p>
+
+### 文章链接格式
+
+文章链接格式可以在 _config.yml 中配置，也可以在文章的头信息中配置：
+
+`permalink: date/pretty/none/xxx`
+
+> 返回全局配置章节：[传送门](#global_config)
+
+模板变量（变量的值取决于**文件名**）：
+
+* `year`：年
+* `month`、`i_month`：月，如 "01" 或 "1"
+* `day`、`i_day`：日期，如 "02" 或 "2"
+* `title`：文章标题
+* `categories`：为文章配置的目录，自动将 `//` 转化成` /`，如果没有将自动忽略。
+
+预设：
+
+* `permalink: date` 相当于 `permalink: /:categories/:year/:month/:day/:title.html`，是默认配置
+* `permalink: pretty` 相当于 `permalink: /:categories/:year/:month/:day/:title/`
+* `permalink: none` 相当于 `permalink: /:categories/:title.html`
+
+也可以根据模板变量自定义，比如：
+
+`permalink: /myblog/:year/:month/:day/:title`
+
+## 插件
+
+两种方法安装插件：
+* 根目录下建立 _plugins 文件夹，插件放在这里即可。运行前 Jekyll 会先执行 .rb 文件
+* 在 _config.yml 中，添加一个以 `gems` 为 `key` 的数组，数组中放插件名。比如：
+
+```yaml
+gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
+ # This will require each of these gems automatically.
+```
+
+插件有三类：
+
+* 生成器 Generater，生成一些东西的功能，比如文章按月汇总等
+* 转换器 Converter，转码功能，可以支持其他标记语言
+* 标签 tag，输出标记的内容，比如 include 功能就是标记
+
+写插件时，有两个标记要注意：
+* `safe`：告诉 Jekyll 此插件是否可以安全地执行任意代码，`true/false`
+* `priority`: 插件加载的优先级顺序，可以是 `:lowest/:low/:normal/:high/:highest`
+
+```ruby
+module Jekyll
+  class UpcaseConverter < Converter
+    safe true
+    priority :low
+    ...
+  end
+end
+```
+
+一些有趣的插件：
+
+* [文章按月归档](https://github.com/shigeya/jekyll-monthly-archive-plugin)
+* [统计字数并估计阅读完成需要的时间](https://github.com/bdesham/reading_time)
+* [Yeoman 的封装工具集，用于开发 Jekyll 网站](https://github.com/robwierzbowski/generator-jekyllrb)
+* [官方推荐的插件](https://www.jekyll.com.cn/docs/plugins/)
+
+## Reference
+
+* [Jekyll 官方中文指南][jekyll-docs]
+* [Jekyll 主题模板][jekyll-themes]
+
+[tz]: https://en.wikipedia.org/wiki/Tz_database 
+[jekyll-docs]: https://www.jekyll.com.cn/docs/home/
+[jekyll-themes]: http://jekyllthemes.org/
